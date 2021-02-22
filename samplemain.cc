@@ -6,5 +6,5 @@ int main(){
     Tsuro mygame;
     mygame.play();
 
-return 0;
+    return 0;
 }
