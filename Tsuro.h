@@ -10,7 +10,9 @@ using namespace std;
 
 class Tsuro:public game{
     public:
-    void display_board();
+    //void display_board();
+    void restart();
+    virtual void display_board( ) const;
 
     private:
     Tile board[3][3];
