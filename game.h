@@ -12,6 +12,8 @@ using namespace std;
 	game( ) { move_number = 0; }
 	//virtual ~game( ) { }
 	void play( );
+	virtual void restart( ) { move_number = 0; }
+	virtual void display_board( ) const = 0;
 
     private:
         // MEMBER VARIABLES

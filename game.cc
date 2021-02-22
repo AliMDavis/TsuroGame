@@ -13,6 +13,7 @@ using namespace std;
     // PUBLIC MEMBER FUNCTIONS
 
     void game::play( ){
+        restart();
 	    display_board( );
     }
 
