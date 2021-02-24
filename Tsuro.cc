@@ -21,11 +21,7 @@ void Tsuro::display_board() const{
         ///displaying just the colors of the background
         cout << B_GREEN << BLACK;
         cout << "                      " << endl;
-        //cout << "       A    B    C     " << endl;
-        cout << "       ";
-        for (char i = 65; i < 74; ++i){
-            cout << i << "    ";
-        }
+        cout << "       A    B    C    " << endl;
         cout << "                      " << endl;
         
         for(int i = 0; i < 3; i++){
@@ -71,4 +67,12 @@ void Tsuro::display_board() const{
 
         }
     cout << B_BLACK << WHITE << endl;
+}
+
+void Tsuro::transferTile(vector<Tile> IndividualTile){
+    for(int i = 0; i< 3; i++){
+        for(int j = 0; j < 3;j++){
+            IndividualTile.push_back(board[i][j]);
+        }
+    }
 }
