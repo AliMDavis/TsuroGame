@@ -30,10 +30,10 @@ void Tsuro::display_board() const{
             cout << B_BLACK << WHITE;
             for(int j = 0; j < 3; j++){
                 if(board[i][j].getTileColor()){
-                    cout << B_BLACK<< "     ";
+                    cout << B_BLACK<< "      ";
                 }
                 else{
-                    cout << B_WHITE<< "     ";
+                    cout << B_WHITE<< "      ";
                 }
             }
             cout<< B_GREEN << endl;
@@ -41,7 +41,7 @@ void Tsuro::display_board() const{
             cout << "  " << 3-i << "  ";
             cout << B_BLACK << WHITE;
             for(int j = 0; j < 3; j++){
-                string outString = "     ";
+                string outString = "      ";
                 Tile s = board[i][j];
                 if(s.getTileColor()){
                     cout << B_BLACK;
@@ -57,10 +57,10 @@ void Tsuro::display_board() const{
             cout << B_BLACK << WHITE;
             for(int j = 0; j < 3; j++){
                 if(board[i][j].getTileColor()){
-                    cout << B_BLACK<< "     ";
+                    cout << B_BLACK<< "      ";
                 }
                 else{
-                    cout << B_WHITE<< "     ";
+                    cout << B_WHITE<< "      ";
                 }
             }
             cout<< B_GREEN << endl;
