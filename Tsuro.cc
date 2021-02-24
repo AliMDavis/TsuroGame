@@ -21,7 +21,11 @@ void Tsuro::display_board() const{
         ///displaying just the colors of the background
         cout << B_GREEN << BLACK;
         cout << "                      " << endl;
-        cout << "       A    B    C    " << endl;
+        //cout << "       A    B    C     " << endl;
+        cout << "       ";
+        for (char i = 65; i < 74; ++i){
+            cout << i << "    ";
+        }
         cout << "                      " << endl;
         
         for(int i = 0; i < 3; i++){
