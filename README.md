@@ -21,12 +21,19 @@ Currently: displays smaller version of Tsuro board
 ************************************************************
 
 Compile:
+
 g++ -Wall -c game.cc
+
 g++ -Wall -c Tile.cc
+
 g++ -Wall -c Tsuro.cc
+
 g++ -Wall -c samplemain.cc
+
 g++ -Wall -c card.cc
+
 g++ -Wall samplemain.o Tsuro.o Tile.o game.o
+
 ./a.out
 
 ************************************************************
