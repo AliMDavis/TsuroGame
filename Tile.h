@@ -7,10 +7,8 @@ class Tile{
         public:
         Tile();
         bool getTileColor()const;///background color
-        //int get_piece();///red or white piece
         bool is_empty();
         void set_TileColor(bool isBlack);
-        //void set_piece(int piece);
         bool const static BBLACK = true;
         bool const static BWHITE = false;
         int const static EMPTY = 0;
