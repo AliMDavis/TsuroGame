@@ -3,42 +3,66 @@
  <head>
     <title>HTML Board Game</title>
  </head>
-   <body style="background-color:Sienna;">
+   <body style="background-color:tan (172, 153, 145);">
 <head>
-
 <head>
 <style>
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #D2B48C;
-  padding: 10px;
+  background-color: tan;
+  padding: 0px;
 }
-
-
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(100, 3, 3);
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
+  padding: 90px;
+  font-size: 0px;
   text-align: center;
+}
+.theDiv{
+  width: 240px;
+  height: 240px;
+  background-color:white;
 }
 </style>
 </head>
 <body>
 
-<div class="grid-container">
-  <div class="grid-item">1</div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>  
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
-  <div class="grid-item">6</div>  
-  <div class="grid-item">7</div>
-  <div class="grid-item">8</div>
-  <div class="grid-item">9</div>  
-</div>
+  <div id="theDiv" class = "theDiv" >
 
+  <div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>  
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>  
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div>  
+  </div>
 
-</body>
-</html>
+  <script>
+    var dragValue;
+
+    function move(id){
+      var element = dcoument.getElementById("theDiv");
+      element.style.position = "absolute";
+      element.onmousedown = function(){
+        dragValue = element;
+      }
+    }
+    document.onmousemove = function(e){
+      var x = e.pageX;
+      var y = e.pageY;
+      dragValue.style.left = x + "px";
+      dragValue.style.top = y + "px";
+    }
+  </script>
+  <img src="\Users\Sophia\Pictures\Tile1.png" height=240 alt="Tile1">
+  </body>
+
+    
+
+  </html>
