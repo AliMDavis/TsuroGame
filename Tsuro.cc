@@ -14,6 +14,7 @@ void Tsuro::restart(){
             board[i][j].set_TileColor(Tile::BWHITE );   
         }
     }
+
 }
 
 void Tsuro::display_board() const{
@@ -75,4 +76,10 @@ void Tsuro::transferTile(vector<Tile> IndividualTile){
             IndividualTile.push_back(board[i][j]);
         }
     }
+}
+
+
+//default for this function that will be used in later stages of this project
+bool Tsuro::is_vaild(){
+    return true;
 }

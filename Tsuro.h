@@ -16,9 +16,16 @@ class Tsuro:public game{
     virtual void display_board( ) const;
     void transferTile(vector<Tile> IndividualTile);
 
+    //this is a function that will be implemented in later stages of this project
+    bool is_vaild();
+
     private:
     Tile board[3][3];
     vector<Tile> IndividualTile;
+
+    //this will be implemented later in the project
+    //it is the vector that will hold all the players moves
+    vector<string> player_moves;
 };
 
 #endif
