@@ -8,7 +8,7 @@ using namespace std;
 
     //these are to know who wins and who is currently moving
     enum who{
-        PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4
+        PLAYER_1, PLAYER_2, PLAYER_3, PLAYER_4, PLAYER_5, PLAYER_6, PLAYER_7, PLAYER_8
     };
 
 	game( ) { move_number = 0; }
