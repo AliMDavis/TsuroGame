@@ -1,68 +1,94 @@
 <!DOCTYPE html>
 <html>
- <head>
-    <title>HTML Board Game</title>
- </head>
-   <body style="background-color:tan (172, 153, 145);">
+
 <head>
-<head>
-<style>
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: tan;
-  padding: 0px;
-}
-.grid-item {
-  background-color: rgb(100, 3, 3);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 90px;
-  font-size: 0px;
-  text-align: center;
-}
-.theDiv{
-  width: 240px;
-  height: 240px;
-  background-color:white;
-}
-</style>
-</head>
-<body>
+  <title>Tsuro Board</title>
 
-  <div id="theDiv" class = "theDiv" >
 
-  <div class="grid-container">
-    <div class="grid-item">1</div>
-    <div class="grid-item">2</div>
-    <div class="grid-item">3</div>  
-    <div class="grid-item">4</div>
-    <div class="grid-item">5</div>
-    <div class="grid-item">6</div>  
-    <div class="grid-item">7</div>
-    <div class="grid-item">8</div>
-    <div class="grid-item">9</div>  
-  </div>
-
-  <script>
-    var dragValue;
-
-    function move(id){
-      var element = dcoument.getElementById("theDiv");
-      element.style.position = "absolute";
-      element.onmousedown = function(){
-        dragValue = element;
-      }
+  <style>
+    * {
+      box-sizing: border-box;
     }
-    document.onmousemove = function(e){
-      var x = e.pageX;
-      var y = e.pageY;
-      dragValue.style.left = x + "px";
-      dragValue.style.top = y + "px";
+
+    .boardDiv {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      background-color: tan;
+      padding: 0px;
+      float: left;
+    }
+
+    .boardLocation {
+      background-color: rgb(121, 45, 45);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 2px;
+      width: 120px;
+      height: 120px;
+      font-size: 0px;
+      text-align: center;
+    }
+
+    .tileDiv {
+      width: 50%;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      float: right;
+    }
+
+    .mainDiv {
+      background-color: rgb(61, 184, 214);
+    }
+  </style>
+  <script>
+    function enableDrop(e) {
+      e.preventDefault();
+    }
+
+    function drag(e) {
+      e.dataTransfer.setData("text", e.target.id);
+    }
+
+    function drop(e) {
+      e.preventDefault();
+      var data = e.dataTransfer.getData("text");
+      e.target.appendChild(document.getElementById(data));
     }
   </script>
-  <img src="\Users\Sophia\Pictures\Tile1.png" height=240 alt="Tile1">
-  </body>
 
-    
+</head>
 
-  </html>
+<body style="background-color:tan (172, 153, 145);">
+
+  <div id="mainDiv" class="mainDiv">
+
+    <div class="boardDiv">
+      <div class="boardLocation" id="bl_01" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_02" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_03" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_04" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_05" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_06" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_07" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_08" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_09" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+    </div>
+    <div class="tileDiv">
+      <img src="Tile1.png" id="Tile1" draggable="true" ondragstart="drag(event)">
+      <img src="Tile2.png" id="Tile2" draggable="true" ondragstart="drag(event)">
+      <img src="Tile3.png" id="Tile3" draggable="true" ondragstart="drag(event)">
+      <img src="Tile4.png" id="Tile4" draggable="true" ondragstart="drag(event)">
+      <img src="Tile5.png" id="Tile5" draggable="true" ondragstart="drag(event)">
+      <img src="Tile6.png" id="Tile6" draggable="true" ondragstart="drag(event)">
+      <img src="Tile7.png" id="Tile7" draggable="true" ondragstart="drag(event)">
+      <img src="Tile8.png" id="Tile8" draggable="true" ondragstart="drag(event)">
+      <img src="Tile9.png" id="Tile9" draggable="true" ondragstart="drag(event)">
+    </div>
+  </div>
+ 
+
+
+</body>
+
+
+
+</html>
