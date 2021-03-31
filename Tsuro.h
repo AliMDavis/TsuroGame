@@ -19,13 +19,17 @@ class Tsuro:public game{
     //this is a function that will be implemented in later stages of this project
     bool is_vaild();
 
-    private:
+    void load_tiles(vector<Tile> tiles);
+
+private:
     Tile board[3][3];
     vector<Tile> IndividualTile;
 
     //this will be implemented later in the project
     //it is the vector that will hold all the players moves
     vector<string> player_moves;
+
+    vector<Tile> tiles;
 };
 
 #endif

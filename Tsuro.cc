@@ -83,3 +83,4 @@ void Tsuro::transferTile(vector<Tile> IndividualTile){
 bool Tsuro::is_vaild(){
     return true;
 }
+
