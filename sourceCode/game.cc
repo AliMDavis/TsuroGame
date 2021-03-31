@@ -11,5 +11,9 @@ using namespace std;
 	    display_board( );
     }
 
+    game::who game::winning() const{
+        //defult until we implement all the functions for the game
+        return PLAYER_1;
+    }
 
 
