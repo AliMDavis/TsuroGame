@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-    <title>Tsuro</title>
+    <title>TSURO</title>
  </head>
    <body style="background-color:brown;">
 <head>
@@ -21,14 +21,27 @@ button {
   font-weight: bold;
   background-color: #FFE4C4;
 }
+body {
+  font-size: large;
+  font-family: florence,cursive;
+  font-weight: bold;
+}
+p {
+  text-align: center;
+}
 </style>
 </head>
 <body>
 
-<img src="../tileGraphics/NewTsuroGameDragon.jpg" height=500 alt="Tsuro Game Dragon" class="center">
-<p></p> 
-<button type="button" onclick="document.location='./boardPage.html'">Play!</button> 
-<p></p> 
+<!---------------------------------------------OPENING GAME PAGE--------------------------------------------->
+<img src="\Users\Sophia\Documents\TsuroGameDragon.jpg" height=500 alt="Tsuro Game Dragon" class="center">
+
+<p>
+  <label for="player">Enter Number of Players:</label><br>
+  <input type="text" id="players" name="players">
+</p> 
+  <button type="button" onclick="document.location='./boardPage.html'">Play!</button><br>
+<!---------------------------------------------OPENING GAME PAGE--------------------------------------------->
 
 </body>
 </html>
