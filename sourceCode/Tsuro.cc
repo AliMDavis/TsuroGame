@@ -8,8 +8,11 @@
 using namespace std;
 
 void Tsuro::restart(){
+
     game::restart();
+
     for(int i = 0; i < 3; i++){
+
         for(int j = 0; j < 3; j++){
             board[i][j].set_TileColor(Tile::BWHITE );   
         }
@@ -70,6 +73,7 @@ void Tsuro::display_board() const{
     cout << B_BLACK << WHITE << endl;
 }
 
+//what is this function used exactly for?
 void Tsuro::transferTile(vector<Tile> IndividualTile){
     for(int i = 0; i< 3; i++){
         for(int j = 0; j < 3;j++){
