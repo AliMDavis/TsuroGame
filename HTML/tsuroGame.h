@@ -13,6 +13,6 @@ using namespace std;
 class tsuroGame
 {
     public:
-        bool startGame(char choice);      //should the game open
+        bool startGame(char choice);      //Does the user want to start a game or not
 };
 #endif

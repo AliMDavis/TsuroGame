@@ -15,6 +15,7 @@ TEST_CASE("OPEN WEBPAGE")
         tsuroGame temp;
         char choice = 'y';
 
+        //User wants to open the game
         REQUIRE(temp.startGame(choice) == true);
     }
 
@@ -22,7 +23,8 @@ TEST_CASE("OPEN WEBPAGE")
     {
         tsuroGame temp;
         char choice = 'n';
-
+        
+        //User does not want to open the game
         REQUIRE(temp.startGame(choice) == false);
     }
 }
