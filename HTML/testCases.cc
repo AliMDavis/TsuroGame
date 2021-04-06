@@ -28,3 +28,29 @@ TEST_CASE("OPEN WEBPAGE")
         REQUIRE(temp.startGame(choice) == false);
     }
 }
+
+TEST_CASE("WHO IS WINNER")
+{
+    SECTION("Player 1 wins")
+    {
+        tsuroGame temp;
+        bool p1 = true, p2 = false;
+        string win;
+        string req = "Player 1 Wins!";
+
+        win = temp.whoWins(p1, p2);
+        REQUIRE(win == req);
+
+    }
+
+    SECTION("Player 2 wins")
+    {
+        tsuroGame temp;
+        bool p1 = false, p2 = true;
+        string win;
+        string req = "Player 2 Wins!";
+
+        win = temp.whoWins(p1, p2);
+        REQUIRE(win == req);
+    }
+}
