@@ -48,9 +48,8 @@
       background-color: #FFE4C4;
     }
     p {
-      font-size: large;
+      font-size: x-small;
       font-family: florence,cursive;
-      font-weight: bold;
     }
 
   </style>
@@ -148,21 +147,35 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <!--need to fix-->
 
 <!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
-  <p style="font-size: large;">--PLAYERS--</p>
+  <p style="font-size: large;" style="font-weight: bold;">PLAYERS</p>
 <body onkeydown='getKeyAndMove(event)'>
-  <img id="image1" src="character2.png" alt="female character" style="width:50px;height:50px;"/>
-  <img id="image2" src="zelda.jpg" alt="zelda character" style="width:50px;height:50px;"/>
+  <p>Player 1: </p><img id="image1" src="character2.png" alt="female character" style="width:50px;height:50px;"/>
+  <br>
+  <p>Player 2: </p><img id="image2" src="zelda.jpg" alt="zelda character" style="width:50px;height:50px;"/>
 </body>
 <!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br>
 
 <!------------------------------------------------------------NEW GAME------------------------------------------------------------>
 <body>
-  <div class="container">
-    <div class="bottomleft"><button style="font-size: xx-large;" onClick="window.location.reload();">NEW GAME</button></div>
-  </div>
+  <button style="font-size: xx-large;" onClick="window.location.reload();">NEW GAME</button>
 </body>
 <!------------------------------------------------------------NEW GAME------------------------------------------------------------>
 
+<br>
+
+<!----------------------------------------------------RULES---------------------------------------------------->
+<body>
+  <p style="text-align: center;">RULES</p>
+  <p style="text-align: center;">1. Chose who will be player 1 and player 2</p>
+  <p style="text-align: center;">2. Move your character where you want to start on the board</p>
+  <p style="text-align: center;">3. Player 1 will go first; they will place one of their tiles onto the board - then Player 2 will go</p>
+  <p style="text-align: center;">4. Take turns</p>
+  <p style="text-align: center;">5. When your piece leaves the board, place in trash</p>
+  <p style="text-align: center;">6. To start a new game, click the "NEW GAME" button</p>
+</body>
+<!----------------------------------------------------RULES---------------------------------------------------->
+
+<br><br>
 </html>
