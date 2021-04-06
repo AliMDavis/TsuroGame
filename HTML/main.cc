@@ -16,14 +16,19 @@ int main(int argc, char *argv[])
 	char choice;
     cin >> choice;
 
-    tsuroGame start;
+    tsuroGame tg;
 
-	if(start.startGame(choice) == true)
+	if(tg.startGame(choice) == true)
 	{
 		ShellExecute(NULL, "open", "file:///C:/Users/ovrbl/OneDrive/Desktop/Tsuro/TsuroGame/HTML/Tsuro.html",
 		NULL, NULL, SW_SHOWNORMAL);
-	}else if(start.startGame(choice) == false){
+	}else if(tg.startGame(choice) == false){
 		cout << "Maybe next time?\n";
 		exit(EXIT_FAILURE);
 	}
+
+    //need to grab p1 and p2
+    string winner;
+    bool p1, p2;
+    winner = tg.whoWins(p1, p2);
 }

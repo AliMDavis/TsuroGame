@@ -23,68 +23,17 @@ bool tsuroGame::startGame(char choice)
 ///////////////////////////////////////////////////////////////////////////
 
 
+//////////////////////////WHICH PLAYER WINS GAME//////////////////////////
+string tsuroGame::whoWins(bool player1, bool player2)
+{
+	string str;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	//function to find amount of players
-
-	//function to decide the winner
-
-	/*ifstream ins("generate.js");
-	string line;
-		while(getline(ins, line))
-		{
-			cout << line << endl;
-		}*/
-	/*bool game = true;
-	if(game)
+	if(player1)
 	{
-		ofstream fout("generate.js");
-		fout << "function myFunction() {\n";
-		fout << "	document.getElementById(" << "\"demo\"" << ").innerHTML = " << "\"Winner!\"" << ";\n";
-		fout << "}";
+		return str = "Player 1 Wins!";
+	}else{
+		return str = "Player 2 Wins!";
 	}
-	
-	/*if (argc == 2) {
-        ifstream textFile(argv[1]);
+}
+///////////////////////////////////////////////////////////////////////////
 
-        if (textFile) 
-		{
-            ofstream htmlFile("title.html");
-            if (htmlFile) {
-
-                htmlFile << "<html>" << '\n' << "<head>" << '\n' <<"<title>" << argv[1] << "</title>" << '\n' << "</head>" << 
-				'\n' << "<body>" << '\n';
-
-                std::string line{};
-                while (std::getline(textFile, line)) {
-                    // Write the line and append a <br>
-                    htmlFile << line << "<br>" << '\n';
-                }
-
-                htmlFile << "</body>" << '\n' << "</html>" << '\n';
-            }
-
-    	}*/
-    //}
-
-
-    //return 0;
-
-
-//}
