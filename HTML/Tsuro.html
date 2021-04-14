@@ -16,7 +16,7 @@ button {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  font-size: large;
+  font-size: xx-large;
   font-family: florence,cursive;
   font-weight: bold;
   background-color: #FFE4C4;
@@ -31,17 +31,22 @@ p {
 }
 </style>
 </head>
+
 <body>
 
 <!---------------------------------------------OPENING GAME PAGE--------------------------------------------->
-<img src="\Users\Sophia\Documents\TsuroGameDragon.jpg" height=500 alt="Tsuro Game Dragon" class="center">
+<img src="../tileGraphics/NewTsuroGameDragon.jpg" height=500 alt="Tsuro Game Dragon" class="center">
 
 <p>
-  <label for="player">Enter Number of Players:</label><br>
-  <input type="text" id="players" name="players">
-</p> 
-  <button type="button" onclick="document.location='./boardPage.html'">Play!</button><br>
+  <p>Click the button below to enter number of players!</p>
+    <button id = "name" style="font-size: large;">Players</button>
+      <p style="font-size: small;">(Number of players is <span id="out">___</span>)</p>
+</p><br><br><br>
+
+  <button type="button" onclick="document.location='./boardPage.html'">LET'S PLAY!</button><br>
 <!---------------------------------------------OPENING GAME PAGE--------------------------------------------->
+
+<script src="generate.js"></script>
 
 </body>
 </html>

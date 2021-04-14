@@ -12,7 +12,7 @@
 
     .boardDiv {
       display: grid;
-      grid-template-columns: auto auto auto;
+      grid-template-columns: auto auto auto auto auto auto;
       background-color: tan;
       padding: 0px;
       float: left;
@@ -29,8 +29,9 @@
     }
 
     .tileDiv {
-      width: 50%;
+      width: 30%;
       display: grid;
+      padding: 2px;
       grid-template-columns: auto auto auto;
       float: right;
     }
@@ -48,9 +49,8 @@
       background-color: #FFE4C4;
     }
     p {
-      font-size: large;
+      font-size: x-small;
       font-family: florence,cursive;
-      font-weight: bold;
     }
 
   </style>
@@ -70,17 +70,18 @@
     }
 
     
-    /////////////////////////////////////MOVE SPRITE/////////////////////////////////////
+    ///////////////////////////////////////MOVE SPRITE///////////////////////////////////////
 			var objImage= null;
 			function init(){
-				objImage=document.getElementById("image1");				
-				objImage.style.position='relative';
-				objImage.style.left='0px';
-				objImage.style.top='0px';
+          objImage=document.getElementById("image1");				
+          objImage.style.position='relative';
+          objImage.style.left='0px';
+          objImage.style.top='0px';
 			}
+      
 			function getKeyAndMove(e){				
 				var key_code=e.which||e.keyCode;
-				switch(key_code){
+				switch(key_code){       
 					case 37: //left arrow key
 						moveLeft();
 						break;
@@ -92,9 +93,22 @@
 						break;
 					case 40: //down arrow key
 						moveDown();
-						break;					
+						break;
+          case 87:          //W
+            moveUp();
+            break;
+          case 65:           //A
+            moveLeft();
+            break;
+          case 83:           //S
+            moveDown();
+            break;
+          case 68:          //D
+            moveRight();
+            break;			
 				}
 			}
+      
 			function moveLeft(){
 				objImage.style.left=parseInt(objImage.style.left)-5 +'px';
 			}
@@ -108,7 +122,7 @@
 				objImage.style.top=parseInt(objImage.style.top)+5 +'px';
 			}
 			window.onload=init;
-      /////////////////////////////////////////////////////////////////////////////////////
+      /////////////////////////////////////////////////////////////////////////////////////////
 
   </script>
 
@@ -129,6 +143,33 @@
       <div class="boardLocation" id="bl_07" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
       <div class="boardLocation" id="bl_08" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
       <div class="boardLocation" id="bl_09" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_10" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_11" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_12" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_13" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_14" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_15" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_16" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_17" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_18" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_19" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_20" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_21" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_22" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_23" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_24" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_25" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_26" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_27" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_28" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_29" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_30" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_31" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_32" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_33" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_34" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_35" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_36" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
     </div>
     <div class="tileDiv">
       <img src="../tileGraphics/Tile1.png" id="Tile1" draggable="true" ondragstart="drag(event)">
@@ -140,6 +181,32 @@
       <img src="../tileGraphics/Tile7.png" id="Tile7" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile8.png" id="Tile8" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile9.png" id="Tile9" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile1a.png" id="Tile1a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile1b.png" id="Tile1b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile1c.png" id="Tile1c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile3a.png" id="Tile3a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile4a.png" id="Tile4a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile4b.png" id="Tile4b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile4c.png" id="Tile4c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile5a.png" id="Tile5a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile5b.png" id="Tile5b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile5c.png" id="Tile5c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile6a.png" id="Tile6a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile7a.png" id="Tile7a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile7b.png" id="Tile7b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile7c.png" id="Tile7c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile8a.png" id="Tile8a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile8b.png" id="Tile8b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile8c.png" id="Tile8c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile9a.png" id="Tile9a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile9b.png" id="Tile9b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile9c.png" id="Tile9c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile10.png" id="Tile10" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile11.png" id="Tile11" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile12.png" id="Tile12" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile12a.png" id="Tile12a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile13.png" id="Tile13" draggable="true" ondragstart="drag(event)">
+      <!---NEED to redo 2 tiles then all tiles complete-->
     </div>
   </div>
 </body>
@@ -147,22 +214,36 @@
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <!--need to fix-->
 
-<!----------------------------------------PLAYER CHARACTERS----------------------------------------->
-  <p>Players:</p>
+<!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
+  <p style="font-size: large;" style="font-weight: bold;">PLAYERS</p>
 <body onkeydown='getKeyAndMove(event)'>
-  <img id="image1" src="character2.png" alt="female character" style="width:50px;height:50px;"/>
-  <img id="image2" src="zelda.jpg" alt="zelda character" style="width:50px;height:50px;"/>
+  <p>Player 1: </p><img id="image1" src="character2.png" alt="female character" style="width:50px;height:50px;"/>
+  <br>
+  <p>Player 2: </p><img id="image2" src="zelda.jpg" alt="zelda character" style="width:50px;height:50px;"/>
 </body>
-<!----------------------------------------PLAYER CHARACTERS----------------------------------------->
+<!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br>
 
-<!---------------------------------------------NEW GAME--------------------------------------------->
+<!------------------------------------------------------------NEW GAME------------------------------------------------------------>
 <body>
-  <div class="container">
-    <div class="bottomleft"><button onClick="window.location.reload();">New Game</button></div>
-  </div>
+  <button style="font-size: xx-large;" onClick="window.location.reload();">NEW GAME</button>
 </body>
-<!---------------------------------------------NEW GAME--------------------------------------------->
+<!------------------------------------------------------------NEW GAME------------------------------------------------------------>
 
+<br>
+
+<!----------------------------------------------------RULES---------------------------------------------------->
+<body>
+  <p style="text-align: center;">RULES</p>
+  <p style="text-align: center;">1. Chose who will be player 1 and player 2</p>
+  <p style="text-align: center;">2. Move your character where you want to start on the board</p>
+  <p style="text-align: center;">3. Player 1 will go first; they will place one of their tiles onto the board - then Player 2 will go</p>
+  <p style="text-align: center;">4. Take turns</p>
+  <p style="text-align: center;">5. When your piece leaves the board, place in trash</p>
+  <p style="text-align: center;">6. To start a new game, click the "NEW GAME" button</p>
+</body>
+<!----------------------------------------------------RULES---------------------------------------------------->
+
+<br><br>
 </html>
