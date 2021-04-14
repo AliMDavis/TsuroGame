@@ -73,14 +73,15 @@
     ///////////////////////////////////////MOVE SPRITE///////////////////////////////////////
 			var objImage= null;
 			function init(){
-				objImage=document.getElementById("image1");				
-				objImage.style.position='relative';
-				objImage.style.left='0px';
-				objImage.style.top='0px';
+          objImage=document.getElementById("image1");				
+          objImage.style.position='relative';
+          objImage.style.left='0px';
+          objImage.style.top='0px';
 			}
+      
 			function getKeyAndMove(e){				
 				var key_code=e.which||e.keyCode;
-				switch(key_code){
+				switch(key_code){       
 					case 37: //left arrow key
 						moveLeft();
 						break;
@@ -92,9 +93,22 @@
 						break;
 					case 40: //down arrow key
 						moveDown();
-						break;					
+						break;
+          case 87:          //W
+            moveUp();
+            break;
+          case 65:           //A
+            moveLeft();
+            break;
+          case 83:           //S
+            moveDown();
+            break;
+          case 68:          //D
+            moveRight();
+            break;			
 				}
 			}
+      
 			function moveLeft(){
 				objImage.style.left=parseInt(objImage.style.left)-5 +'px';
 			}
