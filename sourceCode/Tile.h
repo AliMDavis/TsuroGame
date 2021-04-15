@@ -10,6 +10,7 @@ class Tile{
                 bool getTileColor()const;///background color
                 bool is_empty();
                 void set_TileColor(bool isBlack);
+                bool tileThere();
                 bool const static BBLACK = true;
                 bool const static BWHITE = false;
                 int const static EMPTY = 0;
