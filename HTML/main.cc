@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
 	if(tg.startGame(choice) == true)
 	{
-		ShellExecute(NULL, "open", "file:///C:/Users/ovrbl/OneDrive/Desktop/Tsuro/TsuroGame/HTML/Tsuro.html",
+		ShellExecute(NULL, "open", "file:///C:/Users/samar/OneDrive/Desktop/TsuroGame/HTML/Tsuro.html",
 		NULL, NULL, SW_SHOWNORMAL);
 	}else if(tg.startGame(choice) == false){
 		cout << "Maybe next time?\n";
@@ -31,4 +31,7 @@ int main(int argc, char *argv[])
     string winner;
     bool p1, p2;
     winner = tg.whoWins(p1, p2);
+
+	string fileName = "generate.js";
+	bool open = tg.numOfPlayers(fileName);
 }
