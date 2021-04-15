@@ -79,7 +79,8 @@
           objImage.style.top='0px';
 			}
       
-			function getKeyAndMove(e){				
+			function getKeyAndMove(e){
+
 				var key_code=e.which||e.keyCode;
 				switch(key_code){       
 					case 37: //left arrow key
@@ -184,6 +185,8 @@
       <img src="../tileGraphics/Tile1a.png" id="Tile1a" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile1b.png" id="Tile1b" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile1c.png" id="Tile1c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/dragonTile.jpg" id="dragonTile" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile2a.png" id="Tile2a" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile3a.png" id="Tile3a" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile4a.png" id="Tile4a" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile4b.png" id="Tile4b" draggable="true" ondragstart="drag(event)">
@@ -201,49 +204,49 @@
       <img src="../tileGraphics/Tile9a.png" id="Tile9a" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile9b.png" id="Tile9b" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile9c.png" id="Tile9c" draggable="true" ondragstart="drag(event)">
-      <img src="../tileGraphics/Tile10.png" id="Tile10" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/tile10.png" id="tile10" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile11.png" id="Tile11" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile12.png" id="Tile12" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile12a.png" id="Tile12a" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile13.png" id="Tile13" draggable="true" ondragstart="drag(event)">
-      <!---NEED to redo 2 tiles then all tiles complete-->
     </div>
   </div>
 </body>
 <!-------------------------------------------BOARD AND TILE PIECES------------------------------------------->
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <!--need to fix-->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  <!--need to fix-->
 
 <!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
   <p style="font-size: large;" style="font-weight: bold;">PLAYERS</p>
 <body onkeydown='getKeyAndMove(event)'>
-  <p>Player 1: </p><img id="image1" src="character2.png" alt="female character" style="width:50px;height:50px;"/>
+  <p>Player 1: </p><img id="image1" src="blackpiece.png" alt="black player piece" style="width:25px;height:25px;"/>
   <br>
-  <p>Player 2: </p><img id="image2" src="zelda.jpg" alt="zelda character" style="width:50px;height:50px;"/>
+  <p>Player 2: </p><img id="image2" src="bluepiece.png" alt="blue player piece" style="width:25px;height:25px;"/>
 </body>
 <!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
 
-<br><br>
 
-<!------------------------------------------------------------NEW GAME------------------------------------------------------------>
+<!----------------------------------------------NEW GAME---------------------------------------------->
 <body>
+  <p style="text-align: center;">
   <button style="font-size: xx-large;" onClick="window.location.reload();">NEW GAME</button>
+  </p>
 </body>
-<!------------------------------------------------------------NEW GAME------------------------------------------------------------>
+<!----------------------------------------------NEW GAME---------------------------------------------->
 
-<br>
 
-<!----------------------------------------------------RULES---------------------------------------------------->
+<!-------------------------------------------------------------------RULES------------------------------------------------------------------->
 <body>
   <p style="text-align: center;">RULES</p>
   <p style="text-align: center;">1. Chose who will be player 1 and player 2</p>
   <p style="text-align: center;">2. Move your character where you want to start on the board</p>
   <p style="text-align: center;">3. Player 1 will go first; they will place one of their tiles onto the board - then Player 2 will go</p>
   <p style="text-align: center;">4. Take turns</p>
-  <p style="text-align: center;">5. When your piece leaves the board, place in trash</p>
+  <p style="text-align: center;">5. If your piece moves off the board, you lose</p>
   <p style="text-align: center;">6. To start a new game, click the "NEW GAME" button</p>
 </body>
-<!----------------------------------------------------RULES---------------------------------------------------->
+<!-------------------------------------------------------------------RULES------------------------------------------------------------------->
 
 <br><br>
 </html>
