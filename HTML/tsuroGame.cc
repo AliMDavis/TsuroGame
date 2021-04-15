@@ -13,7 +13,7 @@ using namespace std;
 /////////////////////////////START-TSURO-GAME/////////////////////////////
 bool tsuroGame::startGame(char choice)
 {
-		if(choice == 'y' || 'Y')
+		if(choice == 'y')
 		{
 			return true;
 		}else{
