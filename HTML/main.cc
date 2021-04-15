@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
 
 	if(tg.startGame(choice) == true)
 	{
-		ShellExecute(NULL, "open", "file:///C:/Users/ovrbl/OneDrive/Desktop/Tsuro/TsuroGame/HTML/Tsuro.html",
-		NULL, NULL, SW_SHOWNORMAL);
+		ShellExecute(NULL, "open", "file:///C:/Users/alyss/Desktop/School/CS3560/TsuroGame/HTML/Tsuro.html",
+					 NULL, NULL, SW_SHOWNORMAL);
 	}else if(tg.startGame(choice) == false){
 		cout << "Maybe next time?\n";
 		exit(EXIT_FAILURE);
