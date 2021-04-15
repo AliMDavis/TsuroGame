@@ -3,7 +3,9 @@
 #include <iostream>   
 #include <queue>      
 #include <string>     
-#include "game.h"     
+#include "game.h"
+#include "color.h"  
+#include "Tile.h"   
 using namespace std;
 
     void game::play( ){
@@ -12,8 +14,9 @@ using namespace std;
     }
 
     game::who game::winning() const{
-        //defult until we implement all the functions for the game
-        return PLAYER_1;
+        //if (tileThere()) return PLAYER_2;
+        //else return PLAYER_1;
+
     }
 
 
