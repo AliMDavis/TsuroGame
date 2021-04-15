@@ -27,11 +27,11 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-    //need to grab p1 and p2
+    //need to finish whoWins()
     string winner;
     bool p1, p2;
     winner = tg.whoWins(p1, p2);
 
 	string fileName = "generate.js";
-	bool open = tg.numOfPlayers(fileName);
+	tg.numOfPlayers(fileName);
 }
