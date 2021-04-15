@@ -20,15 +20,18 @@ int main(int argc, char *argv[])
 
 	if(tg.startGame(choice) == true)
 	{
-		ShellExecute(NULL, "open", "file:///C:/Users/alyss/Desktop/School/CS3560/TsuroGame/HTML/Tsuro.html",
-					 NULL, NULL, SW_SHOWNORMAL);
+		ShellExecute(NULL, "open", "file:///C:/Users/samar/OneDrive/Desktop/TsuroGame/HTML/Tsuro.html",
+		NULL, NULL, SW_SHOWNORMAL);
 	}else if(tg.startGame(choice) == false){
 		cout << "Maybe next time?\n";
 		exit(EXIT_FAILURE);
 	}
 
-    //need to grab p1 and p2
+    //need to finish whoWins()
     string winner;
     bool p1, p2;
     winner = tg.whoWins(p1, p2);
+
+	string fileName = "generate.js";
+	tg.numOfPlayers(fileName);
 }

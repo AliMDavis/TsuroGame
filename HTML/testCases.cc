@@ -29,6 +29,22 @@ TEST_CASE("OPEN WEBPAGE")
     }
 }
 
+TEST_CASE("Opening generate.js file")
+{
+    SECTION("Opens file")
+    {
+        tsuroGame temp;
+        string tempFile = "temp.txt";
+        bool open;
+
+        open = temp.numOfPlayers(tempFile);
+        //User wants to open the game
+        REQUIRE(open == false);
+    }
+
+
+}
+
 TEST_CASE("WHO IS WINNER")
 {
     SECTION("Player 1 wins")

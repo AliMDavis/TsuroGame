@@ -13,7 +13,7 @@ using namespace std;
 /////////////////////////////START-TSURO-GAME/////////////////////////////
 bool tsuroGame::startGame(char choice)
 {
-		if(choice == 'y' || 'Y')
+		if(choice == 'y')
 		{
 			return true;
 		}else{
@@ -37,3 +37,28 @@ string tsuroGame::whoWins(bool player1, bool player2)
 }
 ///////////////////////////////////////////////////////////////////////////
 
+
+//////////////////////////////NUMBER OF PLAYERS//////////////////////////////
+bool tsuroGame::numOfPlayers(string fileName)
+{
+	ofstream myfile;
+	if(fileName == "generate.js")
+	{
+		myfile.open(fileName);
+
+			myfile << "document.getElementById(\"name\").onclick = function() " << endl;
+			myfile << "{" << endl;
+			myfile << "	" << "var name = prompt(\"Enter number of players\" );" << endl;
+			myfile << "	" << "document.getElementById(\"out\").innerText = name;" << endl;
+			myfile << "}" << endl;
+			myfile << endl;
+
+		myfile.close();
+
+		return true;
+		
+	}else{
+		return false;
+	}
+}
+/////////////////////////////////////////////////////////////////////////////
