@@ -1,7 +1,7 @@
 document.getElementById("name").onclick = function() 
 {
 	var name = prompt("Enter number of players" );
-	document.getElementById("out").innerText = name;
+	document.getElementById("out").innerHTML = name;
 
 	var textToSave = document.getElementById("out").innerHTML;
 	var hiddenElement = document.createElement('a');
