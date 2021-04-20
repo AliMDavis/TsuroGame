@@ -40,3 +40,19 @@ g++ -Wall samplemain.o Tsuro.o Tile.o game.o
 
 Repo: https://github.com/AliMDavis/TsuroGame
 
+************************************************************
+
+#Instructions:
+
+This game is about the last player alive. Each Player places a tile during their turn that connects 
+with the other paths already laying on the board. If there is none, the first players move will start
+the path. The goal is to place the tiles and not fall off the edge of the board. 
+
+Rules:
+- Chose who will be player 1 and player 2
+- Move your character where you want to start outside of the board
+- Player 1 will go first; they will place one of their tiles onto the board and follow the path - then Player 2 will go
+- Take turns
+- If your piece moves off the board, you lose
+- To start a new game, click the "NEW GAME" button
+
