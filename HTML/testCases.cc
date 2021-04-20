@@ -29,7 +29,20 @@ TEST_CASE("OPEN WEBPAGE")
     }
 }
 
-TEST_CASE("Opening generate.js file")
+
+TEST_CASE("Get number of players")
+{
+    SECTION("2 players")
+    {
+        tsuroGame temp;
+        string tempFile = "players.txt";
+
+        string s = temp.numOfPlayers(tempFile);
+        //User wants to open the game
+        REQUIRE(s == "2");
+    }
+}
+/*TEST_CASE("Opening generate.js file")
 {
     SECTION("Opens file")
     {
@@ -43,7 +56,7 @@ TEST_CASE("Opening generate.js file")
     }
 
 
-}
+}*/
 
 TEST_CASE("WHO IS WINNER")
 {
