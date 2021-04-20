@@ -57,3 +57,9 @@ the path. The goal is to place the tiles and not fall off the edge of the board.
 - If your piece moves off the board, you lose
 - To start a new game, click the "NEW GAME" button
 
+*************************************************************
+
+# Notes: 
+
+- The win function is not fully implemented, players can see who wins in real time to see who wins and judge for themselves. 
+
