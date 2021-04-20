@@ -63,3 +63,18 @@ the path. The goal is to place the tiles and not fall off the edge of the board.
 
 - The win function is not fully implemented, players can see who wins in real time to see who wins and judge for themselves. 
 
+*************************************************************
+
+# To Do List for Next Devs:
+
+1. win fuction for when a player goes off the board it returns the player who won
+2. adding more players and support for more players
+3. fixing the file locations to happen when a person downlaods it they don't have to change their file name
+4. smoother player moving
+5. AI moving a piece
+6. moving pieces without using keys, the program does it for you when you place a tile
+
+*************************************************************
+
+Thank you for playing our game and checking out our GitHub! I hope you had fun!
+
