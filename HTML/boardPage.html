@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html>
 
+  <head>
+    <title>TSURO BOARD</title>
+  </head>
+  <body style="background-color: #FFF3F1">
+  </body>
 <head>
-  <title>TSURO BOARD</title>
-
-
   <style>
     * {
       box-sizing: border-box;
+    }
+
+    div#header {
+      background-color: #DDF;
+      height: 50px;
+    }
+    div#main {
+      margin-top: 100px;
+      margin-left: 50px;
+      min-height: 700px;
+    }
+    div#sidebar {
+      margin-top: 150px;
+      margin-left: 1580px;
+      width: 200px;
+      position: absolute;
+      top: 110px;
+      min-height: 700px;
+    }
+
+    div#footer {
+      border: 2px solid red;
+    }
+
+    .container {
+  height: 100px;
+  position: relative;
+}
+
+.vertical-center {
+  margin: 50px;
+  margin-left: 700px;
+  position: absolute;
+  top: 10%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+    header {
+      background-color: #FFE4C4;
+      padding: 2px;
+      text-align: center;
+      font-size: 30px;
+      font-family: florence,cursive;
+      font-weight: bold;
+      color:  black;
+      border: solid 3px black;
     }
 
     .boardDiv {
@@ -16,6 +65,8 @@
       background-color: tan;
       padding: 0px;
       float: left;
+      border: solid 5px black;
+      margin-left: 90px;
     }
 
     .boardLocation {
@@ -29,15 +80,18 @@
     }
 
     .tileDiv {
-      width: 30%;
+      width: 390%;
       display: grid;
       padding: 2px;
-      grid-template-columns: auto auto auto;
+      grid-template-columns: auto auto auto auto auto auto;
       float: right;
+      border: solid 5px black;
+      margin-top: 58px;
+      margin-left: 50px;
     }
 
     .mainDiv {
-      background-color: rgb(61, 184, 214);
+      margin-top: 25px;
     }
     button {
       display: block;
@@ -47,10 +101,12 @@
       font-family: florence,cursive;
       font-weight: bold;
       background-color: #FFE4C4;
+      border: solid 3px black;
     }
     p {
-      font-size: x-small;
+      font-size: small;
       font-family: florence,cursive;
+      margin-left: 90px;
     }
 
   </style>
@@ -68,10 +124,9 @@
       var data = e.dataTransfer.getData("text");
       e.target.appendChild(document.getElementById(data));
     }
-
     
     ///////////////////////////////////////MOVE SPRITE///////////////////////////////////////
-		var objImage= null;
+    var objImage= null;
     var sprite2 = null;
 			function init(){
           objImage=document.getElementById("image1");				
@@ -120,41 +175,59 @@
 
 				var key_code=e.which||e.keyCode;
 				switch(key_code){
-          case 74: //J     
+          case 65: //left arrow key       
             moveLeft();
 						break;
-					case 73: //I
+					case 87: //Up arrow key
 						moveUp();
 						break;
-					case 76: //L
+					case 68: //right arrow key
 						moveRight();
 						break;
-					case 75: //K
+					case 83: //down arrow key
 						moveDown();
             break;
-          case 87: //W
+          case 73:          //W
             moveUp1();
             break;
-          case 65: //A
+          case 74:           //A
             moveLeft1();
             break;
-          case 83: //S
+          case 75:           //S
             moveDown1();
             break;
-          case 68: //D
+          case 76:          //D
             moveRight1();
             break;			
 				}
 			}
+      
       /////////////////////////////////////////////////////////////////////////////////////////
-
-  </script>
-
+    </script>
 </head>
 
+<body>
+<div id="header">
+  <header>
+    <h2>- T S U R O -</h2>
+  </header>
+</div>
+</body>
+<br><br>
 <!-------------------------------------------BOARD AND TILE PIECES------------------------------------------->
 <body style="background-color:tan (172, 153, 145);">
-
+<div id="main">
+<!----------------------------------------------NEW GAME---------------------------------------------->
+<div class = "container">
+  <div class = "vertical-center">
+<body>
+  <p>
+  <button style="font-size: xx-large;" onClick="window.location.reload();">NEW GAME</button>
+  </p>
+</body>
+</div>
+</div>
+<!----------------------------------------------NEW GAME---------------------------------------------->
   <div id="mainDiv" class="mainDiv">
 
     <div class="boardDiv">
@@ -195,6 +268,9 @@
       <div class="boardLocation" id="bl_35" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
       <div class="boardLocation" id="bl_36" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
     </div>
+  </div>
+</div>
+<div id="sidebar">
     <div class="tileDiv">
       <img src="../tileGraphics/Tile1.png" id="Tile1" draggable="true" ondragstart="drag(event)">
       <img src="../tileGraphics/Tile2.png" id="Tile2" draggable="true" ondragstart="drag(event)">
@@ -234,41 +310,34 @@
       <img src="../tileGraphics/Tile13.png" id="Tile13" draggable="true" ondragstart="drag(event)">
     </div>
   </div>
+</div>
 </body>
 <!-------------------------------------------BOARD AND TILE PIECES------------------------------------------->
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  <!--need to fix-->
+<br><br><br><br><br>
 
 <!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
-  <p style="font-size: large;" style="font-weight: bold;">PLAYERS</p>
+<div id="main">
+<p style="font-size: large;" style="font-weight: bold;">PLAYERS</p>
 <body onload ="init()" onkeydown='getKeyAndMove(event)'>
-  <p>Player 1: (IJKL) </p><img id="image1" src="blackpiece.png" alt="black player piece" style="width:25px;height:25px;"/>
-  <br>
-  <p>Player 2: (WASD)</p><img id="image2" src="bluepiece.png" alt="blue player piece" style="width:25px;height:25px;"/>
+  <p>Player 1: (WASD) </p><p><img id="image1" src="blackpiece.png" alt="black player piece" style="width:25px;height:25px;"/></p>
+  <p>Player 2: (IJKL)</p><p><img id="image2" src="bluepiece.png" alt="blue player piece" style="width:25px;height:25px;"/></p>
 </body>
 <!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
 
-
-<!----------------------------------------------NEW GAME---------------------------------------------->
-<body>
-  <p style="text-align: center;">
-  <button style="font-size: xx-large;" onClick="window.location.reload();">NEW GAME</button>
-  </p>
-</body>
-<!----------------------------------------------NEW GAME---------------------------------------------->
-
+<br><br>
 
 <!-------------------------------------------------------------------RULES------------------------------------------------------------------->
 <body>
-  <p style="text-align: center;">RULES</p>
-  <p style="text-align: center;">1. Chose who will be player 1 and player 2</p>
-  <p style="text-align: center;">2. Move your character where you want to start on the board</p>
-  <p style="text-align: center;">3. Player 1 will go first; they will place one of their tiles onto the board - then Player 2 will go</p>
-  <p style="text-align: center;">4. Take turns</p>
-  <p style="text-align: center;">5. If your piece moves off the board, you lose</p>
-  <p style="text-align: center;">6. To start a new game, click the "NEW GAME" button</p>
+  <p style="font-size: x-small;">RULES</p>
+  <p style="font-size: x-small;">1. Chose who will be player 1 and player 2</p>
+  <p style="font-size: x-small;">2. Move your character where you want to start on the board</p>
+  <p style="font-size: x-small;">3. Player 1 will go first; they will place one of their tiles onto the board - then Player 2 will go</p>
+  <p style="font-size: x-small;">4. Take turns</p>
+  <p style="font-size: x-small;">5. If your piece moves off the board, you lose</p>
+  <p style="font-size: x-small;">6. To start a new game, click the "NEW GAME" button</p>
 </body>
+</div>
 <!-------------------------------------------------------------------RULES------------------------------------------------------------------->
 
 <br><br>
