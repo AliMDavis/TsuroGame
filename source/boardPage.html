@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>TSURO BOARD</title>
+  </head>
+  <body style="background-color: #FFF3F1">
+  </body>
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    div#header {
+      background-color: #DDF;
+      height: 50px;
+    }
+    div#main {
+      margin-top: 100px;
+      margin-left: 50px;
+      min-height: 700px;
+    }
+    div#sidebar {
+      margin-top: 150px;
+      margin-left: 1580px;
+      width: 200px;
+      position: absolute;
+      top: 110px;
+      min-height: 700px;
+    }
+
+    div#footer {
+      border: 2px solid red;
+    }
+
+    .container {
+  height: 100px;
+  position: relative;
+}
+
+.vertical-center {
+  margin: 50px;
+  margin-left: 700px;
+  position: absolute;
+  top: 10%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+    header {
+      background-color: #FFE4C4;
+      padding: 2px;
+      text-align: center;
+      font-size: 30px;
+      font-family: florence,cursive;
+      font-weight: bold;
+      color:  black;
+      border: solid 3px black;
+    }
+
+    .boardDiv {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto;
+      background-color: tan;
+      padding: 0px;
+      float: left;
+      border: solid 5px black;
+      margin-left: 90px;
+    }
+
+    .boardLocation {
+      background-color: rgb(121, 45, 45);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 2px;
+      width: 120px;
+      height: 120px;
+      font-size: 0px;
+      text-align: center;
+    }
+
+    .tileDiv {
+      width: 390%;
+      display: grid;
+      padding: 2px;
+      grid-template-columns: auto auto auto auto auto auto;
+      float: right;
+      border: solid 5px black;
+      margin-top: 58px;
+      margin-left: 50px;
+    }
+
+    .mainDiv {
+      margin-top: 25px;
+    }
+    button {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: large;
+      font-family: florence,cursive;
+      font-weight: bold;
+      background-color: #FFE4C4;
+      border: solid 3px black;
+    }
+    p {
+      font-size: small;
+      font-family: florence,cursive;
+      margin-left: 90px;
+    }
+
+  </style>
+  <script>
+    function enableDrop(e) {
+      e.preventDefault();
+    }
+
+    function drag(e) {
+      e.dataTransfer.setData("text", e.target.id);
+    }
+
+    function drop(e) {
+      e.preventDefault();
+      var data = e.dataTransfer.getData("text");
+      e.target.appendChild(document.getElementById(data));
+    }
+    
+    ///////////////////////////////////////MOVE SPRITE///////////////////////////////////////
+    var objImage= null;
+    var sprite2 = null;
+			function init(){
+          objImage=document.getElementById("image1");				
+          objImage.style.position='relative';
+          objImage.style.left='0px';
+          objImage.style.top='0px';
+
+          sprite2=document.getElementById("image2");				
+          sprite2.style.position='relative';
+          sprite2.style.left='0px';
+          sprite2.style.top='0px';
+			}
+      
+			function moveLeft(){
+				objImage.style.left=parseInt(objImage.style.left)-5 +'px';
+			}
+			function moveUp(){
+				objImage.style.top=parseInt(objImage.style.top)-5 +'px';
+			}
+			function moveRight(){
+				objImage.style.left=parseInt(objImage.style.left)+5 +'px';
+			}
+			function moveDown(){
+				objImage.style.top=parseInt(objImage.style.top)+5 +'px';
+			}
+
+
+      function moveLeft1(){
+				sprite2.style.left=parseInt(sprite2.style.left)-5 +'px';
+			}
+			function moveUp1(){
+				sprite2.style.top=parseInt(sprite2.style.top)-5 +'px';
+			}
+			function moveRight1(){
+				sprite2.style.left=parseInt(sprite2.style.left)+5 +'px';
+			}
+			function moveDown1(){
+				sprite2.style.top=parseInt(sprite2.style.top)+5 +'px';
+			}
+
+      window.onload=init;
+
+
+
+			function getKeyAndMove(e){
+
+				var key_code=e.which||e.keyCode;
+				switch(key_code){
+          case 65: //left arrow key       
+            moveLeft();
+						break;
+					case 87: //Up arrow key
+						moveUp();
+						break;
+					case 68: //right arrow key
+						moveRight();
+						break;
+					case 83: //down arrow key
+						moveDown();
+            break;
+          case 73:          //W
+            moveUp1();
+            break;
+          case 74:           //A
+            moveLeft1();
+            break;
+          case 75:           //S
+            moveDown1();
+            break;
+          case 76:          //D
+            moveRight1();
+            break;			
+				}
+			}
+      
+      /////////////////////////////////////////////////////////////////////////////////////////
+    </script>
+</head>
+
+<body>
+<div id="header">
+  <header>
+    <h2>- T S U R O -</h2>
+  </header>
+</div>
+</body>
+<br><br>
+<!-------------------------------------------BOARD AND TILE PIECES------------------------------------------->
+<body style="background-color:tan (172, 153, 145);">
+<div id="main">
+<!----------------------------------------------NEW GAME---------------------------------------------->
+<div class = "container">
+  <div class = "vertical-center">
+<body>
+  <p>
+  <button style="font-size: xx-large;" onClick="window.location.reload();">NEW GAME</button>
+  </p>
+</body>
+</div>
+</div>
+<!----------------------------------------------NEW GAME---------------------------------------------->
+  <div id="mainDiv" class="mainDiv">
+
+    <div class="boardDiv">
+      <div class="boardLocation" id="bl_01" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_02" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" ddddddddddddddddddwwwwwwwwwwwwwwid="bl_03" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_04" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_05" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_06" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_07" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_08" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_09" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_10" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_11" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_12" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_13" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_14" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_15" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_16" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_17" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_18" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_19" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_20" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_21" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_22" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_23" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_24" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_25" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_26" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_27" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_28" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_29" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_30" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_31" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_32" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_33" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_34" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_35" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+      <div class="boardLocation" id="bl_36" ondrop="drop(event)" ondragover="enableDrop(event)"></div>
+    </div>
+  </div>
+</div>
+<div id="sidebar">
+    <div class="tileDiv">
+      <img src="../tileGraphics/Tile1.png" id="Tile1" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile2.png" id="Tile2" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile3.png" id="Tile3" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile4.png" id="Tile4" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile5.png" id="Tile5" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile6.png" id="Tile6" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile7.png" id="Tile7" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile8.png" id="Tile8" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile9.png" id="Tile9" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile1a.png" id="Tile1a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile1b.png" id="Tile1b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile1c.png" id="Tile1c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/dragonTile.jpg" id="dragonTile" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile2a.png" id="Tile2a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile3a.png" id="Tile3a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile4a.png" id="Tile4a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile4b.png" id="Tile4b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile4c.png" id="Tile4c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile5a.png" id="Tile5a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile5b.png" id="Tile5b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile5c.png" id="Tile5c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile6a.png" id="Tile6a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile7a.png" id="Tile7a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile7b.png" id="Tile7b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile7c.png" id="Tile7c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile8a.png" id="Tile8a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile8b.png" id="Tile8b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile8c.png" id="Tile8c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile9a.png" id="Tile9a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile9b.png" id="Tile9b" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile9c.png" id="Tile9c" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/tile10.png" id="tile10" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile11.png" id="Tile11" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile12.png" id="Tile12" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile12a.png" id="Tile12a" draggable="true" ondragstart="drag(event)">
+      <img src="../tileGraphics/Tile13.png" id="Tile13" draggable="true" ondragstart="drag(event)">
+    </div>
+  </div>
+</div>
+</body>
+<!-------------------------------------------BOARD AND TILE PIECES------------------------------------------->
+
+<br><br><br><br><br>
+
+<!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
+<div id="main">
+<p style="font-size: large;" style="font-weight: bold;">PLAYERS</p>
+<body onload ="init()" onkeydown='getKeyAndMove(event)'>
+  <p>Player Black: (WASD) </p><p><img id="image1" src="blackpiece.png" alt="black player piece" style="width:25px;height:25px;"/></p>
+  <p>Player Blue: (IJKL)</p><p><img id="image2" src="bluepiece.png" alt="blue player piece" style="width:25px;height:25px;"/></p>
+</body>
+<!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
+
+<br><br>
+
+<!-------------------------------------------------------------------RULES------------------------------------------------------------------->
+<body>
+  <p style="font-size: x-small;">RULES</p>
+  <p style="font-size: x-small;">1. Chose who will be player 1 and player 2</p>
+  <p style="font-size: x-small;">2. Move your character where you want to start on the outside of the board</p>
+  <p style="font-size: x-small;">3. Player 1 will go first; they will place one of their tiles onto the board and follow the path - then Player 2 will go</p>
+  <p style="font-size: x-small;">4. Take turns</p>
+  <p style="font-size: x-small;">5. If your piece moves off the board, you lose</p>
+  <p style="font-size: x-small;">6. To start a new game, click the "NEW GAME" button</p>
+</body>
+</div>
+<!-------------------------------------------------------------------RULES------------------------------------------------------------------->
+
+<br><br>
+</html>
