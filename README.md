@@ -42,7 +42,7 @@ Repo: https://github.com/AliMDavis/TsuroGame
 
 ************************************************************
 
-#Instructions:
+# Instructions:
 
 This game is about the last player alive. Each Player places a tile during their turn that connects 
 with the other paths already laying on the board. If there is none, the first players move will start
