@@ -15,7 +15,7 @@ class tsuroGame
     public:
         bool startGame(char choice);      //Does the user want to start a game or not
         string whoWins(bool player1, bool player2);                 //Which player wins the game
-        bool numOfPlayers(string fileName);
+        string numOfPlayers(string fileName);
 
     private:
         bool player1, player2;

@@ -15,6 +15,9 @@ int main(int argc, char *argv[])
     cout << "Do you want to start a Tsuro Game? (y/n)\n";
 	char choice;
     cin >> choice;
+	
+	//Enter file location:
+	//Enter generate.js:
 
     tsuroGame tg;
 
@@ -32,6 +35,7 @@ int main(int argc, char *argv[])
     bool p1, p2;
     winner = tg.whoWins(p1, p2);
 
-	string fileName = "generate.js";
+	//string fileName = "generate.js";
+	string fileName = "players.txt";
 	tg.numOfPlayers(fileName);
 }

@@ -39,7 +39,25 @@ string tsuroGame::whoWins(bool player1, bool player2)
 
 
 //////////////////////////////NUMBER OF PLAYERS//////////////////////////////
-bool tsuroGame::numOfPlayers(string fileName)
+string tsuroGame::numOfPlayers(string fileName)
+{
+	ifstream myfile;
+	string line;
+	
+	if(fileName == "players.txt")
+	{
+		myfile.open(fileName);
+			
+			getline(myfile, line);
+
+		myfile.close();
+
+		return line;
+	}
+	return line;
+}
+
+/*bool tsuroGame::numOfPlayers(string fileName)
 {
 	ofstream myfile;
 	if(fileName == "generate.js")
@@ -60,5 +78,5 @@ bool tsuroGame::numOfPlayers(string fileName)
 	}else{
 		return false;
 	}
-}
+}*/
 /////////////////////////////////////////////////////////////////////////////
