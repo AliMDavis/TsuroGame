@@ -71,51 +71,14 @@
 
     
     ///////////////////////////////////////MOVE SPRITE///////////////////////////////////////
-    var objImage= null;
-    var sprite2 = null;
+			var objImage= null;
 			function init(){
           objImage=document.getElementById("image1");				
           objImage.style.position='relative';
           objImage.style.left='0px';
           objImage.style.top='0px';
-
-          sprite2=document.getElementById("image2");				
-          sprite2.style.position='relative';
-          sprite2.style.left='0px';
-          sprite2.style.top='0px';
 			}
       
-			function moveLeft(){
-				objImage.style.left=parseInt(objImage.style.left)-5 +'px';
-			}
-			function moveUp(){
-				objImage.style.top=parseInt(objImage.style.top)-5 +'px';
-			}
-			function moveRight(){
-				objImage.style.left=parseInt(objImage.style.left)+5 +'px';
-			}
-			function moveDown(){
-				objImage.style.top=parseInt(objImage.style.top)+5 +'px';
-			}
-
-
-      function moveLeft1(){
-				sprite2.style.left=parseInt(sprite2.style.left)-5 +'px';
-			}
-			function moveUp1(){
-				sprite2.style.top=parseInt(sprite2.style.top)-5 +'px';
-			}
-			function moveRight1(){
-				sprite2.style.left=parseInt(sprite2.style.left)+5 +'px';
-			}
-			function moveDown1(){
-				sprite2.style.top=parseInt(sprite2.style.top)+5 +'px';
-			}
-
-      window.onload=init;
-
-
-
 			function getKeyAndMove(e){
 
 				var key_code=e.which||e.keyCode;
@@ -133,19 +96,33 @@
 						moveDown();
 						break;
           case 87:          //W
-            moveUp1();
+            moveUp();
             break;
           case 65:           //A
-            moveLeft1();
+            moveLeft();
             break;
           case 83:           //S
-            moveDown1();
+            moveDown();
             break;
           case 68:          //D
-            moveRight1();
+            moveRight();
             break;			
 				}
 			}
+      
+			function moveLeft(){
+				objImage.style.left=parseInt(objImage.style.left)-5 +'px';
+			}
+			function moveUp(){
+				objImage.style.top=parseInt(objImage.style.top)-5 +'px';
+			}
+			function moveRight(){
+				objImage.style.left=parseInt(objImage.style.left)+5 +'px';
+			}
+			function moveDown(){
+				objImage.style.top=parseInt(objImage.style.top)+5 +'px';
+			}
+			window.onload=init;
       /////////////////////////////////////////////////////////////////////////////////////////
 
   </script>
@@ -241,11 +218,11 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  <!--need to fix-->
 
 <!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
-<p style="font-size: large;" style="font-weight: bold;">PLAYERS</p>
-<body onload ="init()" onkeydown='getKeyAndMove(event)'>
-  <p>Player 1: (arrows) </p><img id="image1" src="blackpiece.png" alt="black player piece" style="width:25px;height:25px;"/>
+  <p style="font-size: large;" style="font-weight: bold;">PLAYERS</p>
+<body onkeydown='getKeyAndMove(event)'>
+  <p>Player 1: </p><img id="image1" src="blackpiece.png" alt="black player piece" style="width:25px;height:25px;"/>
   <br>
-  <p>Player 2: (WASD) </p><img id="image2" src="bluepiece.png" alt="blue player piece" style="width:25px;height:25px;"/>
+  <p>Player 2: </p><img id="image2" src="bluepiece.png" alt="blue player piece" style="width:25px;height:25px;"/>
 </body>
 <!-------------------------------------------PLAYER CHARACTERS-------------------------------------------->
 
