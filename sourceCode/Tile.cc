@@ -7,6 +7,7 @@ using namespace std;
 Tile::Tile(){
     piece_state = 0;
 }
+
 ///gets the tile color
 bool Tile::getTileColor()const{
     return Tile_color;
@@ -23,4 +24,11 @@ bool Tile::is_empty(){
     else{
         return false;
     }
+}
+
+///checks if the Tile is there for win condition
+bool Tile::tileThere() {
+    if(is_empty) return true;
+    else if (getTileColor) return true;
+    else return false;
 }
