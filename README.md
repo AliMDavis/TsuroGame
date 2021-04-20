@@ -1,4 +1,4 @@
-**C++ 2 Group**
+# C++ 2 Group
 
 Sophia Brown
 
@@ -15,27 +15,21 @@ Aliyah Davis
 
 ************************************************************
 
-**Final Project:** Tsuro Game Implementation in C++; to be able to play a game of Tsuro
-
-**Currently:** displays smaller version of Tsuro board
+**Final Project:** 2 player Tsuro Game on a 6x6 board
 
 ************************************************************
 
 **Compile:**
 
-g++ -Wall -c game.cc
+g++ -Wall -c tsuroGame.cc main.cc
+g++ -Wall tsuroGame.o main.o
+./a.exe
 
-g++ -Wall -c Tile.cc
 
-g++ -Wall -c Tsuro.cc
-
-g++ -Wall -c samplemain.cc
-
-g++ -Wall -c card.cc
-
-g++ -Wall samplemain.o Tsuro.o Tile.o game.o
-
-./a.out
+**Compile Test Cases:**
+g++ -Wall -c tsuroGame.cc testCases.cc
+g++ -Wall tsuroGame.o testCases.o
+./a.exe
 
 ************************************************************
 
