@@ -28,7 +28,9 @@ g++ -Wall tsuroGame.o main.o
 ./a.exe
 
 
+
 **Compile Test Cases:**
+
 g++ -Wall -c tsuroGame.cc testCases.cc
 
 g++ -Wall tsuroGame.o testCases.o
