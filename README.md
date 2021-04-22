@@ -73,6 +73,7 @@ the path. The goal is to place the tiles and not fall off the edge of the board.
 4. smoother player moving
 5. AI moving a piece
 6. moving pieces without using keys, the program does it for you when you place a tile
+7. !!!!!!!need to fix the need for file location on the local device!!!!!!!
 
 *************************************************************
 
